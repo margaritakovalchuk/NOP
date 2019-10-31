@@ -1,0 +1,35 @@
+mixin navBar(data)
+    nav.navigation-main
+        ul.navigation-main__items
+            each item in data
+                if(item.active)
+                    li: span.active!= item.title
+                else
+                    li: a(href=item.url): span!= item.title
+
+mixin cardImageOverlay(data)
+    each item in data
+        .col-md-3
+            .card.card-trend
+                .card-img.trend__img(style=`background-image: url('${item.src}')`)
+                .card-img-overlay
+                    p.card-title!= item.title
+
+mixin sectionTitle(data)
+    each item in data
+        .col-md-12
+            .section__wrapper
+                p.section__title!= item.name
+
+mixin cardsWithTitle(data)
+    .card-deck
+        each item in data
+            .card.card-article
+                .card-img__wrapper
+                    img.card-img-top(src!= `${item.src}` alt!= `${item.alt}`)
+                    span.badge.card-badge!=item.badge
+                .card-body
+                    a(href!=`${item.href}`)
+                        .card-title
+                            p!= item.title
+

@@ -1,0 +1,123 @@
+body {
+  background-color: $theme-color;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+}
+
+.header-main {
+  background-color: $container-bg-color;
+}
+
+.trends {
+  padding-bottom: 30px;
+  background-color: $container-bg-color;
+}
+
+.page-title,
+.page-subtitle {
+  font-family: "aakar-medium", serif;
+}
+
+.page-title {
+  font-size: 75px;
+  color: $text-color;
+}
+
+.page-subtitle {
+  color: #444444;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.section__wrapper {
+  border-bottom: 2px solid $text-color;
+  margin-bottom: 20px;
+}
+
+.section__title {
+  background-color: $text-color;
+  font-family: "FuturaPT-Book", Arial, sans-serif;
+  color: $secondary-text-color;
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 20px;
+}
+
+.card-trend {
+  height: 300px;
+}
+
+.trend__img {
+  height: 100%;
+  background: {
+    repeat: no-repeat;
+    size: cover;
+    position: center;
+  }
+}
+
+.section__title_bg-none {
+  background-color: transparent;
+  color: $text-color;
+  font-size: 24px;
+  font-family: "FuturaPT-Book", sans-serif;
+  margin-bottom: 30px;
+}
+
+.tests {
+  background-color: $theme-color;
+  margin: 40px 0;
+}
+
+.see-all {
+  font-size: 20px;
+  font-family: "FuturaPT-Book", sans-serif;
+
+}
+
+.article__img {
+  width: 100%;
+  height: auto;
+}
+
+.card-article {
+  .card-title {
+    font-size: 24px;
+    color: $text-color;
+  }
+}
+
+.card-img__wrapper {
+  position: relative;
+}
+
+.card-badge {
+  position: absolute;
+  bottom: 0;
+  color: $secondary-text-color;
+  background-color: $text-color;
+  left: 0;
+  border-radius: inherit;
+  font-family: "Verdana", Geneva, sans-serif;
+  font-size: 10px;
+}
+
+.best {
+  .section__title {
+    @include article-title;
+  }
+
+  .card-title p {
+    font-family: "FuturaPT-Book", sans-serif;
+    font-size: 24px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}

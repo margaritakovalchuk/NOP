@@ -1,0 +1,24 @@
+extends layouts/_base
+block content
+    include partials/_header
+    main
+        .container
+            section.trends
+                .row.justify-content-around
+                    +sectionTitle(sectionTitle)
+                    +cardImageOverlay(trendsArticles)
+    section.tests
+        .container
+            .row
+                .col-md-6
+                    p.section__title.section__title_bg-none LAST TESTS
+                .col-md-6.text-right
+                    button(type="button").see-all See all
+                .w-100
+            +cardsWithTitle(articlesMain)
+    section.best
+        .container
+            .row
+                +sectionTitle(sectionTitle)
+                .w-100
+            +cardsWithTitle(articlesMain)

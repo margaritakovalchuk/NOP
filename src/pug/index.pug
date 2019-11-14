@@ -5,20 +5,45 @@ block content
         .container
             section.trends
                 .row.justify-content-around
-                    +sectionTitle(sectionTitle)
+                    .col-lg-12
+                        .section__wrapper
+                            p.section__title Trending now
                     +cardImageOverlay(trendsArticles)
-    section.tests
+        section.tests
+            .container
+                .row
+                    .col-lg-6
+                        p.section__title.section__title_bg-none Last tests
+                    .col-lg-6.text-right
+                        button(type="button").see-all See all
+                    .w-100
+                +cardsWithTitleAndBudge(articlesMain)
         .container
-            .row
-                .col-md-6
-                    p.section__title.section__title_bg-none LAST TESTS
-                .col-md-6.text-right
-                    button(type="button").see-all See all
-                .w-100
-            +cardsWithTitle(articlesMain)
-    section.best
+            section.best
+                .section__wrapper
+                    .row
+                        .col-lg-3
+                            p.section__title Best of the week
+                        .col-lg-5.ml-auto.text-right
+                            +navBar(mainNavigation)
+                +cardsWithTitle(bestOfTheWeek)
         .container
-            .row
-                +sectionTitle(sectionTitle)
-                .w-100
-            +cardsWithTitle(articlesMain)
+            section.telegram
+                .row
+                    .col-lg-12
+                        a(href="#" target="_blank")
+                            .telegram__wrapper
+                                    +svg('telegram')
+        .container
+            section.articles
+                .section__wrapper
+                    p.section__title All articles
+                .cards__wrapper
+                    +cardsWithTitleAndBudge(allArticles)
+                .row
+                    .col-lg-2.mx-auto
+                        button.load-more(type="button") Load more
+                            +svg('chevron-down')
+
+
+

@@ -1,12 +1,12 @@
 .container
     header.header-main
-        .col-md-12.text-center
-            a(href="https://nuances.ru")
-                p.page-title NUANCES OF PROGRAMING
-            p.page-subtitle Anyone can code
-        .w-100
-        .col-md-9
-            //+navBar(headerMenu)
-        .col-md-1
-            button.navigation__search(type="button")
-                i.fa.fa-search(aria-hidden="true")
+        .row
+            .col-lg-12.text-center
+                a(href="https://nuances.ru")
+                    p.page-title NUANCES OF PROGRAMING
+                p.page-subtitle Anyone can code
+            .col-lg-11.text-center
+                +navBar(mainNavigation)
+            .col-lg-1
+                button.navigation__search(type="button")
+                    i.fa.fa-search(aria-hidden="true")

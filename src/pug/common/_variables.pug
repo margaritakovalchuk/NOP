@@ -1,87 +1,207 @@
-- const title = "Nuances of programing";
 - const imgPath = "img/"
 
- -
-     const headerMenu = [
-         {
-             url: "#",
-             title: "Home",
-             active: true,
-         },
-         {
-             url: "#",
-             title: "Web dev",
-         },
-         {
-             url: "#",
-             title: "Computer science",
-         },
-         {
-             url: "#",
-             title: "Learning",
-         },
-         {
-             url: "#",
-             title: "Other",
-         },
-         {
-             url: "#",
-             title: "Tests",
-         },
-     ];
+-
+    const mainNavigation = [
+        {
+                 url: "#",
+                 title: "Home",
+                 active: true,
+        },
+        {
+                 url: "#",
+                 title: "Web dev",
+        },
+        {
+                 url: "#",
+                 title: "Computer science",
+        },
+        {
+                 url: "#",
+                 title: "Learning",
+        },
+        {
+                 url: "#",
+                 title: "Other",
+        },
+        {
+                 url: "#",
+                 title: "Tests",
+        },
+    ];
 
 -
     const trendsArticles = [
         {
-            src: imgPath +"python.jpg",
             title: "Изучение Python: от нуля до мастера",
-            alt: "Изучение Python: от нуля до мастера",
+            href: "#",
+            src: imgPath +"Python.webp",
+            srcset: "",
         },
         {
-            src: imgPath +"angular.png",
             title: "ReactJS, Angular5 и Vue.js — какой фреймворк выбрать в 2018",
-            alt: "ReactJS, Angular5 и Vue.js — какой фреймворк выбрать в 2018",
+            href: "#",
+            src: imgPath +"angular.png",
+            srcset: "",
         },
         {
-            src: imgPath +"java.jpg",
             title: "Собеседование Java разработчика. Наиболее Часто Задаваемые Вопросы",
-            alt: "Собеседование Java разработчика. Наиболее Часто Задаваемые Вопросы",
+            href: "#",
+            src: imgPath +"java.webp",
+            srcset: "",
         },
         {
-            src: imgPath +"js.jpg",
             title: "Эти JavaScript-методы всего за несколько минут прокачают ваши навыки",
-            alt: "Эти JavaScript-методы всего за несколько минут прокачают ваши навыки",
+            href: "#",
+            src: imgPath +"js.webp",
+            srcset: "",
         },
     ];
 
 -
     const articlesMain = [
         {
+            title: "Изучение Python: от нуля до мастера",
             href: "#",
             src: imgPath +"developer-324x160.jpg",
-            title: "Изучение Python: от нуля до мастера",
-            alt: "Изучение Python: от нуля до мастера",
+            srcset: "",
             badge: "Tests",
         },
         {
+            title: "Насколько хорошо вы знакомы с основами C?",
             href: "#",
             src: imgPath +"algorithm-324x160.jpg",
-            title: "Насколько хорошо вы знакомы с основами C?",
-            alt: "Насколько хорошо вы знакомы с основами C?",
+            srcset: "",
             badge: "Tests",
         },
         {
-            href: "#",
-            src: imgPath +"react_feature_img-324x160.jpg",
             title: "Насколько хорошо вы знаете React?",
-            alt: "Насколько хорошо вы знаете React?",
-            srcset: imgPath +"react_feature_img-324x160.webp",
+            href: "#",
+            src: imgPath +"react_feature_img-324x160.webp",
+            srcset: "",
             badge: "Tests",
         },
     ];
+
 -
-    const sectionTitle = [
+    const bestOfTheWeek = [
         {
-            name: "TRENDING NOW",
+            title: "Делаем Node.js быстрым: инструменты, техники и советы для создания эффективных серверов",
+            href: "#",
+            src: imgPath +"1_rpwHvAvz7xaeBS4g-YrdeA-324x160.png",
+            srcset: "",
+        },
+        {
+            title: "Преимущества использования препроцессора (Sass) при написании CSS",
+            href: "#",
+            src: imgPath +"1_piklJM4d7ivMmK55oC9XTg-324x160.jpg",
+            srcset: imgPath +"1_piklJM4d7ivMmK55oC9XTg-324x160.webp",
+        },
+        {
+            title: "Графы и пути: Алгоритм Брона-Кербоша, максимальные группы",
+            href: "#",
+            src: imgPath +"1_m2UXRqHpxfcKCcCPvwzg3w-324x160.gif",
+            srcset: "",
+        },
+        {
+            title: "Графы и пути: Алгоритм Брона-Кербоша, максимальные группы",
+            href: "#",
+            src: imgPath +"1_rpwHvAvz7xaeBS4g-YrdeA-324x160.png",
+            srcset: "",
+        },
+        {
+            title: "JavaScript Style Guide от Google. 13 примечательных рекомендаций",
+            href: "#",
+            src: imgPath +"1_LAiJPBst4nHrjpG9jez1xA-324x160.jpg",
+            srcset: imgPath +"1_LAiJPBst4nHrjpG9jez1xA-324x160.webp",
+        },
+        {
+            title: "Как создавать анимированные графы в Python",
+            href: "#",
+            src: imgPath +"1_j0LxVQPbwtQDpL17TH9gZw-324x160.png",
+            srcset: "",
+        },
+    ];
+-
+    const allArticles = [
+        {
+            title: "Повторное использование UI в Android - 5 главных ошибок",
+            href: "#",
+            src: imgPath +"1_rpwHvAvz7xaeBS4g-YrdeA-324x160.png",
+            srcset: "",
+            badge: "Web dev",
+        },
+        {
+            title: "10 лучших фреймворков Node.js",
+            href: "#",
+            src: "",
+            srcset: imgPath +"1__rHVCnnoD5x9t7D8KW2y2w-324x160.webp",
+            badge: "Other",
+        },
+        {
+            title: "Много узлов, одна распределенная система",
+            href: "#",
+            src: imgPath +"1_kcrrW9lsA1E5j99YkVJEZA-324x160.jpeg",
+            srcset: "",
+            badge: "Web dev",
+        },
+        {
+            title: "Как создать и развернуть бота для Twitter при помощи Python, Tweepy и PythonAnywhere",
+            href: "#",
+            src: imgPath +"449-324x160.jpg",
+            srcset: "",
+            badge: "Dev",
+        },
+        {
+            title: "Цикл For…of в JavaScript",
+            href: "#",
+            src: imgPath +"1_VD7Q8-bPlQwRRET1Rh5jKg-324x160.jpg",
+            srcset: imgPath +"1_VD7Q8-bPlQwRRET1Rh5jKg-324x160.webp",
+            badge: "Web dev",
+        },
+        {
+            title: "Почему вы должны обратить внимание на Docker?",
+            href: "#",
+            src: imgPath +"1_9hGvYE5jegHm1r_97gH-jQ-324x160.png",
+            srcset: "",
+            badge: "Tests",
+        },
+        {
+            title: "Рекурсивное программирование",
+            href: "#",
+            src: imgPath +"1_lHuYiIdrPIUllmDOJYRZTw-324x160.png",
+            srcset: "",
+            badge: "Computer science",
+        },
+        {
+            title: "Что такое Редьюсеры: Как использовать их без Redux",
+            href: "#",
+            src: imgPath +"1_E-YllkF85uyOUPxYA0454g-324x160.jpg",
+            srcset: imgPath +"1_E-YllkF85uyOUPxYA0454g-324x160.webp",
+            badge: "Tests",
+        },
+        {
+            title: "Какие языки программирования лучше учить в 2019 году",
+            href: "#",
+            src: imgPath +"1_SeMZ0Gh_yJrgF7uLki1YzQ-324x160.jpg",
+            srcset: "",
+            badge: "Leaning",
+        },
+    ];
+
+-
+    const preFooterArticles = [
+        {
+            title: "Хотите стать счастливым и продуктивным программистом? Используйте эти 5 методов из Психологии!",
+            href: "#",
+            src: "",
+            srcset: imgPath +"0_PtJi89nQa5xopLnn-696x462.webp",
+            badge: "Web dev",
+        },
+        {
+            title: "Почему нужно учить больше язиков програмирования",
+            href: "#",
+            src: "",
+            srcset: imgPath +"blog-image.webp",
+            badge: "Web dev",
         },
     ];

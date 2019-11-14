@@ -28,4 +28,21 @@
   font-size: 15px;
 }
 
+@mixin card-reset {
+  border: 0;
+  border-radius: 0;
+}
 
+@mixin menu {
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 0;
+
+    li {
+      display: inline-flex;
+    }
+
+    span {
+      color: $text-color;
+    }
+  }

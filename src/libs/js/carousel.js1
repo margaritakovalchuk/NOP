@@ -1,0 +1,13 @@
+// const carousel = () =>  {
+//     const body = document.body,
+//         previousArticles = document.querySelector('.page-previous'),
+//         nextArticles = document.querySelector('.page-next'),
+//         articleBlock = document.querySelector('.article__cards'),
+//         articleItem = document.querySelector('.article__card');
+//
+//     previousArticles.addEventListener('click', function (event) {
+//         event.preventDefault();
+//         console.log('Page listed left');
+//     })
+// };
+//

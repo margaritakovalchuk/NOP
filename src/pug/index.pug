@@ -4,46 +4,39 @@ block content
     main
         .container
             section.trends
-                .row.justify-content-around
-                    .col-lg-12
-                        .section__wrapper
-                            p.section__title Trending now
+                .section__wrapper
+                    p.section__title Trending now
+                .d-flex.flex-wrap
                     +cardImageOverlay(trendsArticles)
         section.tests
             .container
-                .row
-                    .col-lg-6
+                .d-flex
+                    .col-6
                         p.section__title.section__title_bg-none Last tests
-                    .col-lg-6.text-right
+                    .col-6.text-right
                         button(type="button").see-all See all
                     .w-100
-                +cardsWithTitleAndBudge(articlesMain)
+                +cardsLastTests(articlesMain)
         .container
             section.best
                 .section__wrapper
                     .row
-                        .col-lg-3
+                        .col-md-3
                             p.section__title Best of the week
-                        .col-lg-5.ml-auto.text-right
+                        .col-md-9.text-right.my-auto
                             +navBar(mainNavigation)
                 +cardsWithTitle(bestOfTheWeek)
         .container
-            section.telegram
-                .row
-                    .col-lg-12
-                        a(href="#" target="_blank")
-                            .telegram__wrapper
-                                    +svg('telegram')
+            section.join-telegram
+                a(href="#" target="_blank")
+                    .telegram__wrapper
+                        +svg('telegram-logo')
         .container
             section.articles
                 .section__wrapper
                     p.section__title All articles
                 .cards__wrapper
                     +cardsWithTitleAndBudge(allArticles)
-                .row
-                    .col-lg-2.mx-auto
-                        button.load-more(type="button") Load more
-                            +svg('chevron-down')
-
-
-
+                .button__wrapper
+                    button.load-more.mx-auto(type="button") Load more
+                        +svg('chevron-down')

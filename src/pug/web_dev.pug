@@ -1,0 +1,14 @@
+extends layouts/_base
+
+block content
+    .container
+        header.header-main
+            .row
+                .col-lg-3
+                    a(href="index.html")
+                        img.logo.img-fluid(src="img/logo.jpg")
+                .col-lg-8
+                    +navBar(mainNavigation)
+                +search
+    main
+        .container

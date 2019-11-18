@@ -1,28 +1,29 @@
 .container
     footer.pre-footer
-        .row
-            .col-lg-3
-                a(href="#")
-                    img.logo.img-fluid(src="img/logo.jpg")
-            .col-lg-4
-                ul.pre-footer__info
-                    li: a(href="#") Политика конфиенциальности
-                    li: a(href="#") Пользовательское соглашение
-                    li: a(href="#") Реклама
-            .col-lg-5
+        .d-flex
+            .pre-footer__wrapper.col-lg-7.d-flex.flex-wrap.align-self-start
+                .col-lg-5.col-md-7
+                    a(href="index.html")
+                        img.logo.img-fluid(src="img/logo.jpg")
+                .col-lg-6.offset-lg-1.col-md-12
+                    ul.pre-footer__info
+                        li: a(href="#") Политика конфиенциальности
+                        li: a(href="#") Пользовательское соглашение
+                        li: a(href="#") Реклама
+            .col-lg-5.col-md-6
                 +footerArticles(preFooterArticles)
                 nav
                     ul.pagination
                         li.page-item
-                            a.page-link.bord.rounded-0(href='#' aria-label='Previous')
+                            button.page-link.page-previous.rounded-0(type="button")
                                 +svg('chevron-down')
                                 span.sr-only Previous
                         li.page-item
-                            a.page-link.rounded-0(href='#' aria-label='Next')
+                            button.page-link.page-next.rounded-0(type="button")
                                 +svg('chevron-down')
                                 span.sr-only Next
     footer.footer-main
-        .row
+        .d-flex.flex-column
             .col-lg-12.text-right
                 +navBar(mainNavigation)
             .col-lg-12

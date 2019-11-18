@@ -13,6 +13,7 @@ import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
 import rename from 'gulp-rename';
 import svgSprite from 'gulp-svg-sprite';
+import cache from 'gulp-cache';
 
 const path = {
     baseDir: './dist',
@@ -92,7 +93,7 @@ const js = () => {
             suffix: '.min',
         }))
         .pipe(sourcemaps.write('.'))
-        // .pipe(gulp.dest(path.js.dist))
+        .pipe(gulp.dest(path.js.dist))
         .pipe(browserSync.stream());
 };
 
@@ -112,6 +113,7 @@ const images = () => {
     return gulp
         .src(`${path.img.src}/**/*.{png,jpg,gif,jpeg,webp}`)
         // .pipe(imgmin())
+        // .pipe(cache(imgmin({ optimizationLevel: 9, progressive: false, interlaced: false })))
         .pipe(gulp.dest(path.img.dist));
 };
 

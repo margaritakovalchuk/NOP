@@ -1,12 +1,13 @@
 .container
     header.header-main
-        .row
-            .col-lg-12.text-center
-                a(href="https://nuances.ru")
+        .d-flex.flex-wrap.text-center.align-items-center
+            .col-lg-12.col-md-12.order-1.order-lg-0
+                a(href="#")
                     p.page-title NUANCES OF PROGRAMING
+            .col-lg-12.d-none.d-lg-block
                 p.page-subtitle Anyone can code
-            .col-lg-11.text-center
+            .col-lg-11.col-md-12.order-4.order-lg-0.col-2.order-sm-1
                 +navBar(mainNavigation)
-            .col-lg-1
-                button.navigation__search(type="button")
-                    i.fa.fa-search(aria-hidden="true")
+            +search
+
+

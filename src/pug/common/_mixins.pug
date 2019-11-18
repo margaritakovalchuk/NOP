@@ -1,5 +1,7 @@
 mixin navBar(data)
     nav.navigation-main
+        button(type="button").nav-toggle
+            +svg('nav-toggle__open')
         ul.navigation-main__items
             each item in data
                 if(item.active)
@@ -7,47 +9,73 @@ mixin navBar(data)
                 else
                     li: a(href=item.url): span!= item.title
 
+mixin search
+    .col-lg-1.col-md-2.ml-auto.order-3.order-lg-0.col-2.order-sm-2
+        button.navigation__search.my-auto(type="button")
+            +svg('search')
+    .search-wrapper.d-none
+        .search-group
+            form
+                .input-group
+                    input.form-control(type='text')
+                    .input-group-append
+                        button.btn.btn-search(type='button') Поиск
+        p.no-results Нет результатов
+
 mixin cardImageOverlay(data)
     each item in data
-        .col-lg-3
+        .col-lg-3.col-md-6.mb-md-3
             a(href!=item.href)
                 .card.card-trend
                     .card-img.trend__img(style=`background-image: url('${item.src}')`)
                     .card-img-overlay.d-flex.align-items-center
                         p.card-title.text-center!= item.title
 
-mixin cardsWithTitleAndBudge(data)
-    .container
-        .row
-            .card-deck
-                each item in data
-                    .col-lg-4
-                        .card.card-article
-                            .card-img__wrapper
-                                picture.card-img-top
-                                    source(srcset!= `${item.srcset}` type="image/webp")
-                                    img(src!= `${item.src}` alt!= `${item.title}`)
-                                span.badge.card-badge!=item.badge
-                            .card-body
-                                a(href!=`${item.href}`)
-                                    .card-title
-                                        p!= item.title
+mixin cardsLastTests(data)
+    .card-deck
+        each item in data
+            .col-lg-4
+                .card.card-article
+                    .card-img__wrapper
+                        picture.card-img-top
+                            source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
+                            img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
+                        span.badge.card-badge!=item.badge
+                    .card-body
+                        a(href!=`${item.href}`)
+                            .card-title
+                                p!= item.title
 
 mixin cardsWithTitle(data)
     .container
-        .row
-            .card-deck
-                each item in data
-                    .col-lg-4
-                        .card.card-article
-                            .card-img__wrapper
-                                picture.card-img-top
-                                    source(srcset!= `${item.srcset}` type="image/webp")
-                                    img(src!= `${item.src}` alt!= `${item.title}`)
-                            .card-body
-                                a(href!=`${item.href}`)
-                                    .card-title
-                                        p!= item.title
+        .card-deck
+            each item in data
+                .col-lg-4.col-md-6
+                    .card.card-article
+                        .card-img__wrapper
+                            picture
+                                source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
+                                img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
+                        .card-body
+                            a(href!=`${item.href}`)
+                                .card-title
+                                    p!= item.title
+
+mixin cardsWithTitleAndBudge(data)
+    .container
+        .card-deck
+            each item in data
+                .col-lg-4.col-md-6
+                    .card.card-article
+                        .card-img__wrapper
+                            picture.card-img-top
+                                source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
+                                img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
+                            span.badge.card-badge!=item.badge
+                        .card-body
+                            a(href!=`${item.href}`)
+                                .card-title
+                                    p!= item.title
 
 mixin svg(name)
     svg(class!= `${name}`)
@@ -57,13 +85,14 @@ mixin footerArticles(data)
     p.article__title Read also
     ul.article__cards
         each item in data
-            a(href!=item.href)
-                li.article__card.d-lg-flex
-                    .row
-                        .col-lg-4
-                            picture.card__img
-                                source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
-                                img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
-                        .col-lg-8
-                            p.card__title!= item.title
+            if(item.active)
+                a(href!=item.href)
+                    li.article__card.d-lg-flex
+                        .row
+                            .col-lg-4
+                                picture.card__img
+                                    source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
+                                    img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
+                            .col-lg-8
+                                p.card__title!= item.title
 

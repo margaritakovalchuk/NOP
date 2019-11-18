@@ -1,26 +1,151 @@
-@media (max-height: 770px) {
+@media (min-width: 1200px) {
+  .nav-toggle {
+    display: none;
+  }
+}
 
+@media (max-width: 1199px) {
+  .page-title {
+    font-size: 67px;
+  }
+
+  .search-wrapper {
+    right: 15px;
+  }
+
+  .section__title_bg-none {
+    margin-bottom: 15px;
+  }
+
+  .card-img__wrapper {
+    height: 123px;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
 }
 
 @media (max-width: 991px) {
+  .page-title {
+    font-size: 40px;
+  }
+
+  .header-main {
+    padding: 20px 0;
+
+    .navigation-main__items li {
+      font-size: 16px;
+    }
+
+    .navigation-main__items span {
+      padding: 9px;
+    }
+  }
+
+  .search-wrapper {
+    bottom: -35px;
+  }
+
+  .search-group::before {
+    position: absolute;
+    right: 34px;
+  }
+
+  .section__title {
+    font-size: 16px;
+  }
+
+  .section__title_bg-none {
+    font-size: 20px;
+  }
+
+  .card-img__wrapper {
+    height: auto;
+  }
+
+  .best,
+  .articles {
+    .card-title p {
+      font-size: 18px;
+    }
+  }
+
+  .card-deck .card {
+    margin: 0;
+  }
+
+  .logo {
+    margin-bottom: 30px;
+  }
+
+  .pre-footer {
+    li {
+      margin-bottom: 20px;
+    }
+  }
 
 }
 
 @media (max-width: 767px) {
+  .nav-toggle {
+    display: block;
+  }
 
+  .best,
+  .footer-main {
+    .nav-toggle {
+      display: none;
+    }
+  }
+
+  .menu-toggle__wrapper {
+    height: 100vh;
+
+    .nav-toggle {
+      display: none;
+    }
+
+    .navigation-main__items {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        font-family: "OpenSans-Regular", sans-serif;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .active {
+        border: 0;
+        color: $links-active-color;
+
+        &:hover {
+          border: 0;
+        }
+      }
+      span {
+        padding: 0;
+      }
+    }
+  }
+
+  .navigation-main__items {
+    display: none;
+  }
 }
 
 @media (max-width: 575px) {
 
 }
 
-@media (max-width: 509px) {
-
-}
-
-@media (max-width: 479px) {
-
-}
+//@media (max-width: 509px) {
+//
+//}
+//
+//@media (max-width: 479px) {
+//
+//}
 
 @media (max-width: 374px) {
 

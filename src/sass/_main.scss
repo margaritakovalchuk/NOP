@@ -485,3 +485,102 @@ ul {
 .socials li {
   margin-right: 30px;
 }
+
+///////////////////
+.main-inner {
+  background-color: $container-bg-color;
+  padding: 40px 0;
+}
+
+.header-main_inner-pages {
+  padding: 0;
+  box-shadow: 0 10px 9px 0 rgba(201, 201, 201, 1);
+
+  .logo {
+    width: 85%;
+  }
+
+  .navigation-main__items span {
+    padding: 25px 14px;
+  }
+}
+
+.inner__title {
+  font-family: "FuturaPT-Book", sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.inner__navigation {
+  margin-bottom: 24px;
+
+  .navigation-main__items {
+    li:hover {
+      border: 0;
+    }
+
+    span {
+      padding: 3px 5px;
+      text-transform: capitalize;
+      font-family: "FuturaPT-Book", sans-serif;
+      font-size: 13px;
+      border: 1px solid #eaeaea;
+      line-height: 1;
+      margin-right: 10px;
+
+      &:hover {
+        border: 1px solid #eaeaea;
+      }
+    }
+  }
+}
+
+.inner__subtitle {
+  font-size: 19px;
+  line-height: 29px;
+  margin-bottom: 14px;
+}
+
+.inner__filter {
+  position: relative;
+  width: 200px;
+  text-align: right;
+}
+
+.filter-list-pulldown {
+  position: absolute;
+  right: 0;
+  top: 27px;
+  z-index: 9999;
+  display: none;
+  text-align: left;
+}
+
+.filter-list-pulldown,
+.filter-current {
+  background-color: $text-color;
+}
+
+.filter-list-pulldown a {
+  color: $secondary-text-color;
+  font-size: 11px;
+  padding: 5px 15px;
+}
+
+.filter-list-pulldown li:hover a {
+  color: $links-active-color;
+}
+
+.filter-current {
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 5px 15px;
+  color: $secondary-text-color;
+  cursor: pointer;
+}
+
+.filter-current:hover + .filter-list-pulldown {
+  display: inline-flex;
+  flex-direction: column;
+}

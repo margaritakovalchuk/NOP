@@ -10,7 +10,7 @@ mixin navBar(data)
                     li: a(href=item.url): span!= item.title
 
 mixin search
-    .col-lg-1.col-md-2.ml-auto.order-3.order-lg-0.col-2.order-sm-2
+    .col-lg-1.col-md-2.ml-auto.order-3.order-lg-0.col-2.order-sm-2.d-flex.align-items-center
         button.navigation__search.my-auto(type="button")
             +svg('search')
     .search-wrapper.d-none

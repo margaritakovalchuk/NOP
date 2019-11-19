@@ -119,13 +119,14 @@
       .active {
         border: 0;
         color: $links-active-color;
-
-        &:hover {
-          border: 0;
-        }
       }
+
       span {
         padding: 0;
+        &:hover {
+          border: 0;
+          color: $links-active-color;
+        }
       }
     }
   }

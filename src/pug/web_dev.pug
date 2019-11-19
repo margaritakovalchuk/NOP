@@ -1,14 +1,33 @@
 extends layouts/_base
-
 block content
     .container
-        header.header-main
-            .row
+        header.header-main.header-main_inner-pages
+            .d-flex
                 .col-lg-3
                     a(href="index.html")
                         img.logo.img-fluid(src="img/logo.jpg")
-                .col-lg-8
+                .col-lg-8.d-flex.align-items-center
                     +navBar(mainNavigation)
                 +search
     main
         .container
+            .main-inner.d-flex
+                .col-lg-12
+                    p.inner__title WEB DEV
+                    .inner__navigation.d-flex.justify-content-between
+                        +navBar(mainNavigation)
+                        .inner__filter
+                            span.filter-current.d-inline-flex Последнее
+                                +svg('chevron-down')
+                            ul.filter-list-pulldown
+                                li: a(href="#") Последнее
+                                li: a(href="#") Обсуждаемые посты
+                                li: a(href="#") Самое популярное
+                                li: a(href="#") Популярное за 7 дней
+                                li: a(href="#") По оценкам в отзывах
+                                li: a(href="#") Случайно
+                    p.inner__subtitle Все что касается web development: Front end, Back end, Full stack; HTML, CSS, JavaScript,
+                        | фреймворки, технологии, безопасность и многое другое!
+
+
+

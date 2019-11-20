@@ -2,15 +2,15 @@
     footer.pre-footer
         .d-flex
             .pre-footer__wrapper.col-lg-7.d-flex.flex-wrap.align-self-start
-                .col-lg-5.col-md-7
+                .col-lg-5.col-md-7.d-none.d-lg-block.px-sm-0.px-md-auto
                     a(href="index.html")
                         img.logo.img-fluid(src="img/logo.jpg")
-                .col-lg-6.offset-lg-1.col-md-12
+                .col-lg-6.offset-lg-1.col-md-12.offset-0.px-sm-0.px-md-auto
                     ul.pre-footer__info
                         li: a(href="#") Политика конфиенциальности
                         li: a(href="#") Пользовательское соглашение
                         li: a(href="#") Реклама
-            .col-lg-5.col-md-6
+            .col-lg-5.col-md-6.d-none.d-lg-block
                 +footerArticles(preFooterArticles)
                 nav
                     ul.pagination

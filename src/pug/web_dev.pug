@@ -14,29 +14,32 @@ block content
                 +search
     main
         .container
-            .main-inner.d-flex.flex-column
-                .col-lg-12
-                    p.inner__title WEB DEV
-                    .inner__navigation.d-flex.justify-content-between
-                        nav.navigation-main
-                            +navBar(mainNavigation, true)
-                        .inner__filter
-                            span.filter-current.d-inline-flex Последнее
-                                +svg('chevron-down')
-                            ul.filter-list-pulldown
-                                li: a(href="#") Последнее
-                                li: a(href="#") Обсуждаемые посты
-                                li: a(href="#") Самое популярное
-                                li: a(href="#") Популярное за 7 дней
-                                li: a(href="#") По оценкам в отзывах
-                                li: a(href="#") Случайно
-                    p.inner__subtitle Все что касается web development: Front end, Back end, Full stack; HTML, CSS, JavaScript,
-                        | фреймворки, технологии, безопасность и многое другое!
-                .col-lg-8
-                    .card-deck
+            .main-inner
+                .row.mx-0
+                    .col-lg-12
+                        p.inner__title WEB DEV
+                        .inner__navigation.d-flex.justify-content-between
+                            nav.navigation-main
+                                +navBar(mainNavigation, true)
+                            .inner__filter
+                                span.filter-current.d-inline-flex Последнее
+                                    +svg('chevron-down')
+                                ul.filter-list-pulldown
+                                    li: a(href="#") Последнее
+                                    li: a(href="#") Обсуждаемые посты
+                                    li: a(href="#") Самое популярное
+                                    li: a(href="#") Популярное за 7 дней
+                                    li: a(href="#") По оценкам в отзывах
+                                    li: a(href="#") Случайно
+                        p.inner__subtitle Все что касается web development: Front end, Back end, Full stack; HTML, CSS, JavaScript,
+                            | фреймворки, технологии, безопасность и многое другое!
+                    .col-lg-8.pr-5
                         +innnerArticle(articlesWeb)
-                .col-lg-4
-                    p sider
+                    .col-lg-4
+                        aside.aside-articles
+                            +asideArticle(articlesAside)
+        button(type="button").up
+            +svg('chevron-down')
 
 
 

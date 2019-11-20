@@ -80,16 +80,30 @@ mixin cardsWithTitleAndBudge(data)
 mixin innnerArticle(data)
     each item in data
         .article__card.article__card_inner
-            .d-flex
-                .col-md-5
+            .row
+                .col-md-4
                     a(href!=`${item.href}`)
                         picture.card-img
                             source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
                             img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
-                .col-md-7
+                .col-md-8
                     .card-body
                         a(href!=`${item.href}`).card-title!= item.title
                         p.card-text!= item.text
+
+mixin asideArticle(data)
+    each item in data
+        .article__card.article__card_aside
+            .row
+                .col-lg-4
+                    a(href!=`${item.href}`)
+                        picture.card-img
+                            source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
+                            img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
+                .col-lg-8.pl-0
+                    a(href!=`${item.href}`).card-title!= item.title
+                .card-body
+                    p.card-text!= item.text
 
 mixin svg(name)
     svg(class!= `${name}`)

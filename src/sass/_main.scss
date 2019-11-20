@@ -490,10 +490,6 @@ ul {
   //position: fixed;
   z-index: 9999;
 
-  .logo {
-    width: 85%;
-  }
-
   .navigation-main__items span {
     padding: 25px 14px;
   }
@@ -539,6 +535,7 @@ ul {
   font-size: 19px;
   line-height: 29px;
   margin-bottom: 30px;
+  width: 85%;
 }
 
 .inner__filter {

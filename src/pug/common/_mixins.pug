@@ -77,6 +77,25 @@ mixin cardsWithTitleAndBudge(data)
                                 .card-title
                                     p!= item.title
 
+mixin innerPageHeader(data)
+    each item in data
+        .col-lg-12
+            p.inner__title!= item.title
+            .inner__navigation.d-flex.justify-content-between
+                nav.navigation-main
+                    +navBar(mainNavigation, false)
+                .inner__filter
+                    span.filter-current.d-inline-flex Последнее
+                        +svg('chevron-down')
+                    ul.filter-list-pulldown
+                        li: a(href="#") Последнее
+                        li: a(href="#") Обсуждаемые посты
+                        li: a(href="#") Самое популярное
+                        li: a(href="#") Популярное за 7 дней
+                        li: a(href="#") По оценкам в отзывах
+                        li: a(href="#") Случайно
+            p.inner__subtitle!= item.description
+
 mixin innnerArticle(data)
     each item in data
         .article__card.article__card_inner

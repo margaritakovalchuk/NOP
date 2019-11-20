@@ -23,8 +23,9 @@ block content
                     .row
                         .col-md-3
                             p.section__title Best of the week
-                        .col-md-9.text-right.my-auto
-                            +navBar(mainNavigation)
+                        .col-md-9
+                            nav.navigation-main
+                                +navBar(mainNavigation)
                 +cardsWithTitle(bestOfTheWeek)
         .container
             section.join-telegram

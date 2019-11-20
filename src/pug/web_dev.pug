@@ -7,15 +7,19 @@ block content
                     a(href="index.html")
                         img.logo.img-fluid(src="img/logo.jpg")
                 .col-lg-8.d-flex.align-items-center
-                    +navBar(mainNavigation)
+                    nav.navigation-main
+                        button(type="button").nav-toggle
+                            +svg('nav-toggle__open')
+                        +navBar(mainNavigation, false)
                 +search
     main
         .container
-            .main-inner.d-flex
+            .main-inner.d-flex.flex-column
                 .col-lg-12
                     p.inner__title WEB DEV
                     .inner__navigation.d-flex.justify-content-between
-                        +navBar(mainNavigation)
+                        nav.navigation-main
+                            +navBar(mainNavigation, true)
                         .inner__filter
                             span.filter-current.d-inline-flex Последнее
                                 +svg('chevron-down')
@@ -28,6 +32,11 @@ block content
                                 li: a(href="#") Случайно
                     p.inner__subtitle Все что касается web development: Front end, Back end, Full stack; HTML, CSS, JavaScript,
                         | фреймворки, технологии, безопасность и многое другое!
+                .col-lg-8
+                    .card-deck
+                        +innnerArticle(articlesWeb)
+                .col-lg-4
+                    p sider
 
 
 

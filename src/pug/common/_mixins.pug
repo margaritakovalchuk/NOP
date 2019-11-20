@@ -1,13 +1,12 @@
-mixin navBar(data)
-    nav.navigation-main
-        button(type="button").nav-toggle
-            +svg('nav-toggle__open')
-        ul.navigation-main__items
-            each item in data
-                if(item.active)
-                    li: span.active!= item.title
-                else
-                    li: a(href=item.url): span!= item.title
+// TODO move to mixin
+mixin navBar(data, isSorted)
+    - data = isSorted ? data.sort(function (a, b) { return a.title < b.title ? -1 : 1; }) : data;
+    ul.navigation-main__items
+        each item in data
+            if(item.active)
+                li: span.active!= item.title
+            else
+                li: a(href=item.url): span!= item.title
 
 mixin search
     .col-lg-1.col-md-2.ml-auto.order-3.order-lg-0.col-2.order-sm-2.d-flex.align-items-center
@@ -21,6 +20,7 @@ mixin search
                     .input-group-append
                         button.btn.btn-search(type='button') Поиск
         p.no-results Нет результатов
+
 
 mixin cardImageOverlay(data)
     each item in data
@@ -76,6 +76,20 @@ mixin cardsWithTitleAndBudge(data)
                             a(href!=`${item.href}`)
                                 .card-title
                                     p!= item.title
+
+mixin innnerArticle(data)
+    each item in data
+        .article__card.article__card_inner
+            .d-flex
+                .col-md-5
+                    a(href!=`${item.href}`)
+                        picture.card-img
+                            source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
+                            img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
+                .col-md-7
+                    .card-body
+                        a(href!=`${item.href}`).card-title!= item.title
+                        p.card-text!= item.text
 
 mixin svg(name)
     svg(class!= `${name}`)

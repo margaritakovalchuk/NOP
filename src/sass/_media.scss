@@ -131,7 +131,10 @@
     }
   }
 
-  .navigation-main__items {
+  .header-main .navigation-main__items {
+    display: none;
+  }
+  .best .navigation-main__items {
     display: none;
   }
 }

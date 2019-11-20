@@ -27,8 +27,9 @@ ul {
   position: relative;
 }
 
-.navigation-main__items {
+.header-main .navigation-main__items {
   @include menu;
+  justify-content: center;
 
   li {
     font-size: 18px;
@@ -249,12 +250,16 @@ ul {
 }
 
 .best {
+  .navigation-main {
+    @include menu-wrapper;
+  }
 
   .navigation-main__items {
     @include menu;
-    vertical-align: baseline;
     margin-right: 15px;
     margin-left: auto;
+    justify-content: flex-end;
+    align-items: center;
 
     li {
       font-size: 12px;
@@ -262,7 +267,6 @@ ul {
 
       :hover span {
         color: $links-active-color;
-        border: 0;
       }
     }
 
@@ -270,12 +274,11 @@ ul {
       margin-right: 20px;
     }
 
-    .active {
-      color: $links-active-color;
-    }
+    //.active {
+    //  color: $links-active-color;
+    //}
   }
 }
-
 
 .card-title p {
   font-family: "FuturaPT-Book", sans-serif;
@@ -433,39 +436,33 @@ ul {
   padding: 15px 0;
 
   .navigation-main {
-    @include menu;
-    float: right;
+    @include menu-wrapper;
+    justify-content: flex-end;
   }
 
   .navigation-main__items {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
+    @include menu;
+    margin-bottom: 5px;
 
-    li {
+    li:not(:last-child) {
       margin-right: 20px;
-    }
-
-    span, li {
-      text-transform: uppercase;
-      font-size: 14px;
-      color: $secondary-text-color;
-      padding: 0;
-      font-family: "OpenSans-Regular", Arial, sans-serif;
     }
 
     li:hover a > span {
       color: $links-active-color;
+    }
 
-      &:hover {
-        border: 0;
-      }
+    span {
+      text-transform: uppercase;
+      font-size: 14px;
+      color: $secondary-text-color;
+      font-family: "OpenSans-Regular", Arial, sans-serif;
     }
   }
+}
 
-  .rights {
-    font-size: 13px;
-  }
+.rights {
+  font-size: 13px;
 }
 
 .menu-toggle__wrapper {
@@ -516,22 +513,21 @@ ul {
   margin-bottom: 24px;
 
   .navigation-main__items {
-    li:hover {
-      border: 0;
-    }
+    @include menu;
 
     span {
       padding: 3px 5px;
-      text-transform: capitalize;
       font-family: "FuturaPT-Book", sans-serif;
       font-size: 13px;
       border: 1px solid #eaeaea;
       line-height: 1;
       margin-right: 10px;
+    }
 
-      &:hover {
-        border: 1px solid #eaeaea;
-      }
+    li:hover a > span {
+      border: 1px solid $links-active-color;
+      background-color: $links-active-color;
+      color: $secondary-text-color;
     }
   }
 }
@@ -551,7 +547,7 @@ ul {
 .filter-list-pulldown {
   position: absolute;
   right: 0;
-  top: 27px;
+  top: 100%;
   z-index: 9999;
   display: none;
   text-align: left;
@@ -583,4 +579,24 @@ ul {
 .filter-current:hover + .filter-list-pulldown {
   display: inline-flex;
   flex-direction: column;
+}
+
+.article__card_inner {
+  .card-body {
+    padding: 0;
+  }
+
+  .card-img {
+    border-radius: 0;
+  }
+
+  .card-title {
+    font-size: 26px;
+    font-family: "FuturaPT-Book", sans-serif;
+  }
+
+  .card-text {
+    color: #777777;
+    font-size: 13px;
+  }
 }

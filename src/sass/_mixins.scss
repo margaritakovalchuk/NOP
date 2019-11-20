@@ -33,25 +33,15 @@
 }
 
 @mixin menu {
-  margin-bottom: 0;
-  padding: 0;
-  font-size: 0;
   flex-wrap: wrap;
-
-  li {
-    display: inline-flex;
-  }
+  display: flex;
 
   span {
     color: $text-color;
-    padding: 0;
   }
-
-  .active {
-    border: 0;
-
-    &:hover span{
-      border: 0;
-    }
-  }
+}
+@mixin menu-wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
 }

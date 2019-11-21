@@ -1,0 +1,16 @@
+extends layouts/_inner-page
+block pageTitle
+    | Dev
+block main
+    main
+        .container
+            .main-inner
+                .row.mx-0
+                    +innerPageHeader(mainNavigation[2].title, mainNavigation[2].description)
+                    .col-lg-8.pr-5
+                        +innnerArticle(articlesWeb)
+                    .col-lg-4
+                        aside.aside-articles
+                            +asideArticle(articlesAside)
+        button(type="button").up
+            +svg('chevron-down')

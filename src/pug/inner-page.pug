@@ -1,22 +1,23 @@
 extends layouts/_base
 block content
-    .container
-        header.header-main.header-main_inner-pages
-            .d-flex
-                .col-lg-2.my-auto
-                    a(href="index.html")
-                        img.logo.img-fluid(src="img/logo.jpg")
-                .col-lg-9.d-flex.align-items-center
-                    nav.navigation-main
-                        button(type="button").nav-toggle.d-block.d-md-none
-                            +svg('nav-toggle__open')
-                        +navBar(mainNavigation, false)
-                +search
+    .header-wrapper
+        .container
+            header.header-main.header-main_inner-pages
+                .d-flex
+                    .col-lg-2.my-auto
+                        a(href="index.html")
+                            img.logo.img-fluid(src="img/logo.jpg")
+                    .col-lg-9.d-flex.align-items-center
+                        nav.navigation-main
+                            button(type="button").nav-toggle.d-block.d-md-none
+                                +svg('nav-toggle__open')
+                            +navBar(mainNavigation, false)
+                    +search
     main
         .container
             .main-inner
                 .row.mx-0
-                    //+innerPageHeader(mainNavigation)
+                    +innerPageHeader(mainNavigation)
                     .col-lg-8.pr-5
                         +innnerArticle(articlesWeb)
                     .col-lg-4

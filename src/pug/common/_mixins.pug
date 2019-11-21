@@ -4,9 +4,9 @@ mixin navBar(data, isSorted)
     ul.navigation-main__items
         each item in data
             if(item.active)
-                li: span.active!= item.title
+                li.active!= item.title
             else
-                li: a(href=item.url): span!= item.title
+                li: a(href=item.url)!= item.title
 
 mixin search
     .col-lg-1.col-md-2.ml-auto.order-3.order-lg-0.col-2.order-sm-2.d-flex.align-items-center
@@ -35,7 +35,7 @@ mixin cardsLastTests(data)
     .card-deck
         each item in data
             .col-lg-4
-                .card.card-article
+                article.card.card-article
                     .card-img__wrapper
                         picture.card-img-top
                             source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
@@ -51,7 +51,7 @@ mixin cardsWithTitle(data)
         .card-deck
             each item in data
                 .col-lg-4.col-md-6
-                    .card.card-article
+                    article.card.card-article
                         .card-img__wrapper
                             picture
                                 source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
@@ -78,27 +78,28 @@ mixin cardsWithTitleAndBudge(data)
                                     p!= item.title
 
 mixin innerPageHeader(data)
-    each item in data
-        .col-lg-12
-            p.inner__title!= item.title
-            .inner__navigation.d-flex.justify-content-between
-                nav.navigation-main
-                    +navBar(mainNavigation, false)
-                .inner__filter
-                    span.filter-current.d-inline-flex Последнее
-                        +svg('chevron-down')
-                    ul.filter-list-pulldown
-                        li: a(href="#") Последнее
-                        li: a(href="#") Обсуждаемые посты
-                        li: a(href="#") Самое популярное
-                        li: a(href="#") Популярное за 7 дней
-                        li: a(href="#") По оценкам в отзывах
-                        li: a(href="#") Случайно
-            p.inner__subtitle!= item.description
+    section.inner-page_header
+        each item in data
+            .col-lg-12
+                p.inner__title!= item.title
+                .inner__navigation.d-flex.justify-content-between
+                    nav.navigation-main
+                        +navBar(mainNavigation, false)
+                    .inner__filter
+                        span.filter-current.d-inline-flex Последнее
+                            +svg('chevron-down')
+                        ul.filter-list-pulldown
+                            li: a(href="#") Последнее
+                            li: a(href="#") Обсуждаемые посты
+                            li: a(href="#") Самое популярное
+                            li: a(href="#") Популярное за 7 дней
+                            li: a(href="#") По оценкам в отзывах
+                            li: a(href="#") Случайно
+                p.inner__subtitle!= item.description
 
 mixin innnerArticle(data)
     each item in data
-        .article__card.article__card_inner
+        article.article__card.article__card_inner
             .row
                 .col-md-4
                     a(href!=`${item.href}`)
@@ -112,7 +113,7 @@ mixin innnerArticle(data)
 
 mixin asideArticle(data)
     each item in data
-        .article__card.article__card_aside
+        article.article__card.article__card_aside
             .row
                 .col-lg-4
                     a(href!=`${item.href}`)
@@ -129,17 +130,18 @@ mixin svg(name)
         use(xlink:href="img/symbol/svg/sprite.svg#" + name)
 
 mixin footerArticles(data)
-    p.article__title Read also
-    ul.article__cards
-        each item in data
-            if(item.active)
-                a(href!=item.href)
-                    li.article__card.d-lg-flex
-                        .row
-                            .col-lg-4
-                                picture.card__img
-                                    source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
-                                    img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
-                            .col-lg-8
-                                p.card__title!= item.title
+    section.read-more
+        p.article__title Read also
+        ul.article__cards
+            each item in data
+                if(item.active)
+                    a(href!=item.href)
+                        li.article__card.d-lg-flex
+                            .row
+                                .col-lg-4
+                                    picture.card__img
+                                        source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
+                                        img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
+                                .col-lg-8
+                                    p.card__title!= item.title
 

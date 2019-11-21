@@ -25,6 +25,10 @@ ul {
   background-color: $container-bg-color;
   padding-bottom: 40px;
   position: relative;
+
+  .navigation-main {
+    margin: 10px 0;
+  }
 }
 
 .header-main .navigation-main__items {
@@ -35,20 +39,32 @@ ul {
     font-size: 18px;
     font-family: "EBGaramond-Regular", "Times New Roman", serif;
     text-transform: uppercase;
-    transition: all 1s ease-out 0.5s;
+    position: relative;
+    margin-right: 20px;
 
-    :hover span {
-      border-bottom: 3px solid $links-active-color;
+    &:before {
+      content: "";
+      display: block;
+      width: 0;
+      left: 50%;
+      transition: width .2s ease-in-out;
+      transform: translateX(-50%);
+      height: 3px;
+      background-color: $links-active-color;
+      position: absolute;
+      bottom: -16px;
+    }
+
+    &:hover:before,
+    &:focus:before {
+      width: 100%;
     }
   }
+}
 
-  span {
-    padding: 12px;
-    display: block;
-  }
-
-  .active {
-    border-bottom: 3px solid $links-active-color;
+.navigation-main__items {
+  li, a {
+    color: $text-color;
   }
 }
 
@@ -265,13 +281,13 @@ ul {
       font-size: 12px;
       font-family: "Verdana", "Geneva", serif;
 
-      :hover span {
+      &:hover a {
         color: $links-active-color;
       }
-    }
 
-    li:not(:last-child) {
-      margin-right: 20px;
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
     }
   }
 }
@@ -440,19 +456,19 @@ ul {
     @include menu;
     margin-bottom: 5px;
 
-    li:not(:last-child) {
-      margin-right: 20px;
-    }
-
-    li:hover a > span {
+    li:hover a {
       color: $links-active-color;
     }
 
-    span {
+    li, a {
       text-transform: uppercase;
       font-size: 12px;
       color: $secondary-text-color;
       font-family: "OpenSans-Regular", Arial, sans-serif;
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
     }
   }
 }
@@ -484,12 +500,16 @@ ul {
   padding: 40px 0;
 }
 
+.header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
 .header-main_inner-pages {
   padding: 0;
   box-shadow: 0 6px 8px 0 rgba(224, 224, 224, 0.8);
   background-color: $secondary-text-color;
-  //position: sticky;
-  z-index: 9999;
 
   .navigation-main__items span {
     padding: 25px 14px;
@@ -509,22 +529,25 @@ ul {
   .navigation-main__items {
     @include menu;
 
-    span {
+    li {
       padding: 3px 5px;
       font-family: "OpenSans-Regular", sans-serif;
       font-size: 11px;
       border: 1px solid #eaeaea;
       line-height: 1;
       margin-right: 10px;
+
+      &:hover {
+        border: 1px solid $links-active-color;
+        background-color: $links-active-color;
+      }
+
+      &:hover a {
+        color: $secondary-text-color;
+      }
     }
 
-    li:hover a > span {
-      border: 1px solid $links-active-color;
-      background-color: $links-active-color;
-      color: $secondary-text-color;
-    }
-
-    .active {
+    li.active {
       border: 1px solid $text-color;
       background-color: $text-color;
       color: $secondary-text-color;
@@ -635,6 +658,11 @@ ul {
   margin-bottom: 0;
   color: $text-color;
   text-overflow: ellipsis;
+}
+
+.aside-articles {
+  position: sticky;
+  top: 120px;
 }
 
 .up {

@@ -1,0 +1,37 @@
+include ../common/_variables
+include ../common/_mixins
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        title
+            block pageTitle
+        link(rel="shortcut icon" href="img/favicon.png" type="image/png")
+        include ../partials/_styles
+    body
+        noscript
+            p.alert.alert-warning.text-center.mb-0 For full functionality of this site it is necessary to enable JavaScript.
+                | Here are the -
+                a(href="https://www.enable-javascript.com/" target="_blank")
+                    | instructions how to enable JavaScript in your web browser
+        .page
+            block headerInner
+                .header-wrapper
+                    .container
+                        header.header-main.header-main_inner-pages
+                            .d-flex
+                                .col-lg-2.my-auto
+                                    a(href="index.html")
+                                        img.logo.img-fluid(src="img/logo.jpg")
+                                .col-lg-9.d-flex.align-items-center
+                                    nav.navigation-main
+                                        button(type="button").nav-toggle.d-block.d-md-none
+                                            +svg('nav-toggle__open')
+                                        +navBar(mainNavigation, false)
+                                +search
+            block main
+            include ../partials/_footer
+            include ../partials/_menu-toggle
+        include ../partials/_scripts

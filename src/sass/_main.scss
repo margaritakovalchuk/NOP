@@ -35,6 +35,7 @@ ul {
     font-size: 18px;
     font-family: "EBGaramond-Regular", "Times New Roman", serif;
     text-transform: uppercase;
+    transition: all 1s ease-out 0.5s;
 
     :hover span {
       border-bottom: 3px solid $links-active-color;
@@ -487,7 +488,7 @@ ul {
   padding: 0;
   box-shadow: 0 6px 8px 0 rgba(224, 224, 224, 0.8);
   background-color: $secondary-text-color;
-  //position: fixed;
+  //position: sticky;
   z-index: 9999;
 
   .navigation-main__items span {

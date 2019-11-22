@@ -11,7 +11,9 @@
                         li: a(href="#") Пользовательское соглашение
                         li: a(href="#") Реклама
             .col-lg-5.col-md-6.d-none.d-lg-block
-                +footerArticles(preFooterArticles)
+                section.read-more
+                    p.article__title Read also
+                    +footerArticles(preFooterArticles)
                 nav
                     ul.pagination
                         li.page-item

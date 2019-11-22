@@ -129,18 +129,26 @@ mixin svg(name)
         use(xlink:href="img/symbol/svg/sprite.svg#" + name)
 
 mixin footerArticles(data)
-    section.read-more
-        p.article__title Read also
-        ul.article__cards
-            each item in data
-                if(item.active)
-                    a(href!=item.href)
-                        li.article__card.d-lg-flex
-                            .row
-                                .col-lg-4
-                                    picture.card__img
-                                        source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
-                                        img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
-                                .col-lg-8
-                                    p.card__title!= item.title
+    ul.article__cards
+        each item in data
+            if(item.active)
+                a(href!=item.href)
+                    li.article__card.d-lg-flex
+                        .row
+                            .col-lg-4
+                                picture.card__img
+                                    source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
+                                    img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
+                            .col-lg-8
+                                p.card__title!= item.title
+
+mixin asideArticleMain(title,srcset,href,src)
+    a(href!=`${href}`)
+        article.card.card-article
+            .card-img__wrapper
+                picture.card-img-top
+                    source.img-fluid(srcset!= `${srcset}` type="image/webp")
+                    img.img-fluid(src!= `${src}` alt!= `${title}`)
+            .card-body
+                p.card-title!= title
 

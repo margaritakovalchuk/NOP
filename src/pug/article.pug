@@ -15,6 +15,7 @@ block main
                                 .time__wrapper.d-flex
                                     p.article__time
                                         time(datetime="") 19.11.2019
+                                    +svg('eye')
                                     p.article__view 14
                         .col-lg-8
                             include partials/_article-content
@@ -41,6 +42,5 @@ block main
                                     p.aside-title Тесты
                                 +asideArticleMain(allArticles[0].title,allArticles[0].srcset,allArticles[0].href,allArticles[0].src)
                                 +asideArticle(preFooterArticles)
-
                     a(href="#up").up
                         +svg('chevron-down')

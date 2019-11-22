@@ -4,13 +4,14 @@ block pageTitle
 block main
     main
         .container
-            .main-inner
-                .row.mx-0
-                    +pageCaption(mainNavigation[1].title, mainNavigation[1].description)
-                    .col-lg-8.pr-5
-                        +innnerArticle(articlesWeb)
-                    .col-lg-4
-                        aside.aside-articles
-                            +asideArticle(articlesAside)
-        button(type="button").up
+            a(id="up")
+                .main-inner
+                    .row.mx-0
+                        +pageCaption(mainNavigation[1].title, mainNavigation[1].description)
+                        .col-lg-8.pr-5
+                            +innnerArticle(articlesWeb)
+                        .col-lg-4
+                            aside.aside-articles
+                                +asideArticle(articlesAside)
+        a(href="#up").up
             +svg('chevron-down')

@@ -1,0 +1,46 @@
+extends layouts/_article
+
+block pageTitle
+    | Lorem ipsum
+block main
+    main
+        .container
+            a(id="up")
+                .main-inner.main-inner_article
+                    .row.mx-0
+                        .col-lg-12
+                            .article__info.d-flex.align-items-center.flex-column
+                                a(href="#").article__badge Web Dev
+                                p.article__title 3 способа клонирования объектов в JavaScript
+                                .time__wrapper.d-flex
+                                    p.article__time
+                                        time(datetime="") 19.11.2019
+                                    p.article__view 14
+                        .col-lg-8
+                            include partials/_article-content
+                            ul.article__tags
+                                li Tеги
+                                li.active: a(href="#") Javascript
+                            +socials
+                            .more-articles.d-flex.justify-content-between
+                                .previous-article
+                                    p.previous Предыдущая статья
+                                    a(href="#").previous-title 4 golang-сниппета, которые вводят в заблуждение разработчиков C#!
+                                .next-article
+                                    p.next Следующая статья
+                                    a(href="#").next-title Создаем чат-бот в Python с помощью nltk
+                        .col-lg-4
+                            aside.aside-articles__block
+                                .aside-title__wrapper
+                                    p.aside-title Читайте также
+                                +asideArticleMain(articlesWeb[0].title,articlesWeb[0].srcset,articlesWeb[0].href,articlesWeb[0].src)
+                                +asideArticle(preFooterArticles)
+                                +pagination
+                            aside.aside-articles__block
+                                .aside-title__wrapper
+                                    p.aside-title Тесты
+                                +asideArticleMain(allArticles[0].title,allArticles[0].srcset,allArticles[0].href,allArticles[0].src)
+                                +asideArticle(preFooterArticles)
+
+                    a(href="#up").up
+                        +svg('chevron-down')

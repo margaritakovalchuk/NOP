@@ -21,7 +21,6 @@ mixin search
                         button.btn.btn-search(type='button') Поиск
         p.no-results Нет результатов
 
-
 mixin cardImageOverlay(data)
     each item in data
         .col-lg-3.col-md-6.mb-md-3
@@ -31,53 +30,7 @@ mixin cardImageOverlay(data)
                     .card-img-overlay.d-flex.align-items-center
                         p.card-title.text-center!= item.title
 
-mixin cardsLastTests(data)
-    .card-deck
-        each item in data
-            .col-lg-4
-                article.card.card-article
-                    .card-img__wrapper
-                        picture.card-img-top
-                            source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
-                            img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
-                        span.badge.card-badge!=item.badge
-                    .card-body
-                        a(href!=`${item.href}`)
-                            .card-title
-                                p!= item.title
-
-mixin cardsWithTitle(data)
-    .container
-        .card-deck
-            each item in data
-                .col-lg-4.col-md-6
-                    article.card.card-article
-                        .card-img__wrapper
-                            picture
-                                source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
-                                img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
-                        .card-body
-                            a(href!=`${item.href}`)
-                                .card-title
-                                    p!= item.title
-
-mixin cardsWithTitleAndBudge(data)
-    .container
-        .card-deck
-            each item in data
-                .col-lg-4.col-md-6
-                    .card.card-article
-                        .card-img__wrapper
-                            picture.card-img-top
-                                source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
-                                img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
-                            span.badge.card-badge!=item.badge
-                        .card-body
-                            a(href!=`${item.href}`)
-                                .card-title
-                                    p!= item.title
-
-mixin innerPageHeader(title, description)
+mixin pageCaption(title, description)
     section.inner-page_header
         .col-lg-12
             p.inner__title!= `${title}`
@@ -103,12 +56,42 @@ mixin innnerArticle(data)
                 .col-md-4
                     a(href!=`${item.href}`)
                         picture.card-img
-                            source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
+                            source.img-fluid(type="image/webp" srcset!= `${item.srcset}`)
+                            source.img-fluid(type="image/jpeg" srcset!= `${item.src}`)
                             img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
                 .col-md-8
                     .card-body
                         a(href!=`${item.href}`).card-title!= item.title
                         p.card-text!= item.text
+
+mixin asideArticleMain(title, srcset, href, src)
+    a(href!=`${href}`)
+        article.card.card-article
+            .card-img__wrapper
+                picture
+                    source.img-fluid(type="image/webp" srcset!= `${srcset}`)
+                    source.img-fluid(type="image/jpeg" srcset!= `${src}`)
+                    img.img-fluid(src!= `${src}` alt!= `${title}`)
+            .card-body
+                p.card-title!= title
+
+mixin card(data)
+    .container
+        .card-deck
+            each item in data
+                .col-lg-4.col-md-6
+                    article.card.card-article
+                        .card-img__wrapper
+                            a(href!=`${item.href}`)
+                                picture
+                                    source.img-fluid(type="image/webp" srcset!= `${item.srcset}`)
+                                    source.img-fluid(type="image/jpeg" srcset!= `${item.src}`)
+                                    img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
+                                span.badge.card-badge!=item.badge
+                        .card-body
+                            a(href!=`${item.href}`)
+                                .card-title
+                                    p!= item.title
 
 mixin asideArticle(data)
     each item in data
@@ -117,7 +100,8 @@ mixin asideArticle(data)
                 .col-lg-4
                     a(href!=`${item.href}`)
                         picture.card-img
-                            source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
+                            source.img-fluid(type="image/webp" srcset!= `${item.srcset}`)
+                            source.img-fluid(type="image/jpeg" srcset!= `${item.src}`)
                             img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
                 .col-lg-8.pl-0
                     a(href!=`${item.href}`).card-title!= item.title
@@ -128,27 +112,33 @@ mixin svg(name)
     svg(class!= `${name}`)
         use(xlink:href="img/symbol/svg/sprite.svg#" + name)
 
-mixin footerArticles(data)
-    ul.article__cards
-        each item in data
-            if(item.active)
-                a(href!=item.href)
-                    li.article__card.d-lg-flex
-                        .row
-                            .col-lg-4
-                                picture.card__img
-                                    source.img-fluid(srcset!= `${item.srcset}` type="image/webp")
-                                    img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
-                            .col-lg-8
-                                p.card__title!= item.title
+mixin pagination
+    nav
+        ul.pagination
+            li.page-item
+                button.page-link.page-previous.rounded-0(type="button")
+                    +svg('chevron-down')
+                    span.sr-only Previous
+            li.page-item
+                button.page-link.page-next.rounded-0(type="button")
+                    +svg('chevron-down')
+                    span.sr-only Next
 
-mixin asideArticleMain(title,srcset,href,src)
-    a(href!=`${href}`)
-        article.card.card-article
-            .card-img__wrapper
-                picture.card-img-top
-                    source.img-fluid(srcset!= `${srcset}` type="image/webp")
-                    img.img-fluid(src!= `${src}` alt!= `${title}`)
-            .card-body
-                p.card-title!= title
+mixin socials
+    ul.socials.d-flex
+        li: a(href="#" target="_blank")
+            +svg('telegram-logo')
+        li: a(href="#" target="_blank")
+            +svg('twitter-logo')
+        li: a(href="#" target="_blank")
+            +svg('vk-logo')
+        li: a(href="#" target="_blank")
+            +svg('linkedin-logo')
+        li: a(href="#" target="_blank")
+            +svg('facebook-logo')
 
+//mixin picture
+//    picture
+//        source.img-fluid(type="image/webp" srcset!= `${item.srcset}`)
+//        source.img-fluid(type="image/jpeg" srcset!= `${item.src}`)
+//        img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)

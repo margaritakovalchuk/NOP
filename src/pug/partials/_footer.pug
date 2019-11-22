@@ -13,17 +13,9 @@
             .col-lg-5.col-md-6.d-none.d-lg-block
                 section.read-more
                     p.article__title Read also
-                    +footerArticles(preFooterArticles)
-                nav
-                    ul.pagination
-                        li.page-item
-                            button.page-link.page-previous.rounded-0(type="button")
-                                +svg('chevron-down')
-                                span.sr-only Previous
-                        li.page-item
-                            button.page-link.page-next.rounded-0(type="button")
-                                +svg('chevron-down')
-                                span.sr-only Next
+                    .article__cards
+                        +asideArticle(preFooterArticles)
+                +pagination
     footer.footer-main
         .d-flex.flex-column
             .col-lg-12.text-right
@@ -31,5 +23,3 @@
                     +navBar(mainNavigation)
             .col-lg-12
                 small.rights © Nuances of programming, 2018. При копировании материала ссылка на источник обязательна.
-
-

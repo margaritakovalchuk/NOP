@@ -16,7 +16,7 @@ block content
                     .col-6.text-right
                         button(type="button").see-all See all
                     .w-100
-                +cardsLastTests(articlesMain)
+                +card(articlesMain)
         .container
             section.best
                 .section__wrapper
@@ -26,7 +26,7 @@ block content
                         .col-md-9
                             nav.navigation-main
                                 +navBar(mainNavigation)
-                +cardsWithTitle(bestOfTheWeek)
+                +card(bestOfTheWeek)
         .container
             section.join-telegram
                 a(href="#" target="_blank")
@@ -37,7 +37,7 @@ block content
                 .section__wrapper
                     p.section__title All articles
                 .cards__wrapper
-                    +cardsWithTitleAndBudge(allArticles)
+                    +card(allArticles)
                 .button__wrapper
                     button.load-more.mx-auto(type="button") Load more
                         +svg('chevron-down')

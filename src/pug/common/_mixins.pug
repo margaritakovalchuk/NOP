@@ -15,10 +15,9 @@ mixin search
     .search-wrapper.d-none
         .search-group
             form
-                .input-group
+                label.input-group
                     input.form-control(type='text')
-                    .input-group-append
-                        button.btn.btn-search(type='button') Поиск
+                button.btn.btn-search(type='button') Поиск
         p.no-results Нет результатов
 
 mixin cardImageOverlay(data)

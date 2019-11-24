@@ -9,16 +9,16 @@ mixin navBar(data, isSorted)
                 li: a(href=item.url)!= item.title
 
 mixin search
-    .col-lg-1.col-md-2.ml-auto.order-3.order-lg-0.col-2.order-sm-2.d-flex.align-items-center
-        button.navigation__search.my-auto(type="button")
-            +svg('search')
-    .search-wrapper.d-none
-        .search-group
-            form
-                label.input-group
-                    input.form-control(type='text')
-                button.btn.btn-search(type='button') Поиск
-        p.no-results Нет результатов
+    .col-lg-1.order-lg-0.col-2.d-flex.align-items-center.ml-md-auto.ml-0.order-3.order-md-2.order-xl-0
+        .position-relative.ml-auto
+            button.navigation__search.my-auto(type="button")
+                +svg('search')
+            .search-wrapper.d-none
+                .search-group
+                    form.form-inline
+                        label.sr-only Поиск
+                        input.input-search(type='text')
+                        button.btn.btn-search(type='button') Поиск
 
 mixin cardImageOverlay(data)
     each item in data
@@ -75,8 +75,8 @@ mixin asideArticleMain(title, srcset, href, src)
                 p.card-title!= title
 
 mixin card(data)
-    .container
-        .card-deck
+    .d-flex
+        .card-deck.justify-content-center
             each item in data
                 .col-lg-4.col-md-6
                     article.card.card-article
@@ -89,8 +89,7 @@ mixin card(data)
                                 span.badge.card-badge!=item.badge
                         .card-body
                             a(href!=`${item.href}`)
-                                .card-title
-                                    p!= item.title
+                                p.card-title!= item.title
 
 mixin asideArticle(data)
     each item in data

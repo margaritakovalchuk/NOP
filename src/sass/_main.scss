@@ -95,12 +95,12 @@ ul {
 }
 
 .search-wrapper {
-  box-shadow: 0 3px 5px 0 rgba(217, 208, 217, 1);
+  box-shadow: 0 3px 5px 0 #d9d0d9;
   position: absolute;
-  bottom: -40px;
-  right: 15px;
+  right: 0px;
   width: 350px;
   z-index: 2;
+  top: 46px;
 }
 
 .search-group {
@@ -112,24 +112,20 @@ ul {
   &::before {
     content: '';
     position: absolute;
-    right: 35px;
+    right: 5px;
     top: -22px;
     border: 10px solid transparent;
     border-bottom: 10px solid $links-active-color;
     z-index: 9999;
   }
 
-  .form-control,
-  .btn-search {
-    font-size: 12px;
-    border-radius: 0;
-    line-height: 18px;
-  }
-
   .btn-search {
     font-family: "OpenSans-Regular", sans-serif;
     color: $secondary-text-color;
     background-color: $text-color;
+    font-size: 12px;
+    border-radius: 0;
+    line-height: 18px;
 
     &:hover,
     &:focus {
@@ -138,13 +134,8 @@ ul {
   }
 }
 
-.no-results {
-  background-color: #fdfdfd;
-  text-align: center;
-  font-size: 12px;
-  padding: 6px;
-  border-top: 1px solid #ededed;
-  display: none;
+.input-search {
+  flex-grow: 2;
 }
 
 .search {
@@ -206,13 +197,14 @@ ul {
   color: $text-color;
   font-size: 24px;
   font-family: "FuturaPT-Book", sans-serif;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   padding: 0;
 }
 
 .tests {
   background-color: $theme-color;
-  margin: 40px 0;
+  //margin: 20px 0;
+  padding: 20px 0;
 }
 
 .see-all {
@@ -244,19 +236,29 @@ ul {
   height: auto;
 }
 
+.card-deck { ///TODO
+  padding: 0 15px;
+}
+
 .card-deck .card-article {
   @include card-reset;
   margin-bottom: 15px;
 
   .card-title {
-    font-size: 24px;
+    font-size: 21px;
     color: $text-color;
+    font-family: "FuturaPT-Book", sans-serif;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 1.3;
+    margin-bottom: 0;
   }
 
   .card-body {
     font-family: "FuturaPT-Book", sans-serif;
-    font-size: 24px;
-    padding: 20px 0 0;
+    //font-size: 24px;
+    //padding: 20px 0 0;
+    padding: 10px 0 0;
     background-color: #edeef0;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
@@ -313,14 +315,6 @@ ul {
       }
     }
   }
-}
-
-.card-title p {
-  font-family: "FuturaPT-Book", sans-serif;
-  font-size: 24px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  line-height: 1.3;
 }
 
 .best,

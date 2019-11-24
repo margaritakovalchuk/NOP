@@ -6,10 +6,6 @@
     font-size: 67px;
   }
 
-  .search-wrapper {
-    right: 15px;
-  }
-
   .section__title_bg-none {
     margin-bottom: 15px;
   }
@@ -20,10 +16,6 @@
 
   .nav-toggle {
     display: none;
-  }
-
-  .pre-footer .article__card {
-    margin-bottom: 10px;
   }
 
   .pre-footer__info li:not(:last-child) {
@@ -52,15 +44,6 @@
     }
   }
 
-  .search-wrapper {
-    bottom: -35px;
-  }
-
-  .search-group::before {
-    position: absolute;
-    right: 34px;
-  }
-
   .section__title {
     font-size: 16px;
   }
@@ -75,18 +58,19 @@
 
   .best,
   .articles {
-    .card-title p {
+    .card-title {
       font-size: 18px;
     }
   }
 
   .card-deck .card {
-    margin: 0;
+    margin-bottom: 15px;
   }
 
-  .logo {
-    margin-bottom: 30px;
+  .card-deck .card-article .card-body {
+    padding: 5px 0 0;
   }
+
   .pre-footer__info {
     display: flex;
     flex-direction: row;
@@ -100,8 +84,20 @@
 }
 
 @media (max-width: 767px) {
+  .header-main {
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  .header-main .navigation-main {
+    margin-bottom: 10px;
+  }
   .nav-toggle {
     display: block;
+    padding: 0;
+    margin: 0;
   }
 
   .best,
@@ -148,13 +144,76 @@
     display: none;
   }
 
+  .nav-toggle__close,
+  .nav-toggle__open {
+    height: 25px;
+    width: 25px;
+  }
+
   .best .navigation-main__items {
     display: none;
+  }
+
+  .trends {
+    padding-top: 20px;
+  }
+
+  .telegram__wrapper {
+    padding: 10px 0;
+    display: block;
+
+    .telegram-logo {
+      height: 33px;
+    }
+  }
+
+  .pre-footer__info {
+    display: block;
+
+
+    .pre-footer {
+      padding: 10px 0;
+    }
+
+    .rights {
+      line-height: 1;
+      font-size: 12px;
+    }
+
+    .articles .section__wrapper {
+      margin: 0;
+    }
   }
 }
 
 @media (max-width: 575px) {
+  .card-deck {
+    padding: 0;
+  }
 
+  .best {
+    padding: 15px 0;
+  }
+
+  .telegram__wrapper {
+    display: none;
+  }
+
+  .articles {
+    padding: 0;
+  }
+
+  .card-deck .card-article .card-title {
+    font-size: 16px;
+  }
+
+  .cards__wrapper {
+    margin-bottom: 8px;
+  }
+
+  .button__wrapper {
+    margin-bottom: 15px;
+  }
 }
 
 //@media (max-width: 509px) {
@@ -165,6 +224,5 @@
 //
 //}
 
-@media (max-width: 374px) {
-
-}
+//@media (max-width: 374px) {
+//}

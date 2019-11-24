@@ -13,7 +13,7 @@ import concat from 'gulp-concat';
 import uglify from 'gulp-uglify';
 import rename from 'gulp-rename';
 import svgSprite from 'gulp-svg-sprite';
-import cache from 'gulp-cache';
+// import webp from 'gulp-webp';
 
 const path = {
     baseDir: './dist',
@@ -113,7 +113,7 @@ const images = () => {
     return gulp
         .src(`${path.img.src}/**/*.{png,jpg,gif,jpeg,webp}`)
         // .pipe(imgmin())
-        // .pipe(cache(imgmin({ optimizationLevel: 9, progressive: false, interlaced: false })))
+        // .pipe(webp())
         .pipe(gulp.dest(path.img.dist));
 };
 

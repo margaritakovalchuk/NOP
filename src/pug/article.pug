@@ -8,16 +8,16 @@ block main
             a(id="up")
                 .main-inner.main-inner_article
                     .row.mx-0
-                        .col-lg-12
+                        .col-md-12
                             .article__info.d-flex.align-items-center.flex-column
                                 a(href="#").article__badge Web Dev
-                                p.article__title 3 способа клонирования объектов в JavaScript
+                                p.article__title.text-center 3 способа клонирования объектов в JavaScript
                                 .time__wrapper.d-flex
                                     p.article__time
                                         time(datetime="") 19.11.2019
                                     +svg('eye')
                                     p.article__view 14
-                        .col-lg-8
+                        .col-md-8
                             include partials/_article-content
                             ul.article__tags
                                 li Tеги
@@ -30,7 +30,7 @@ block main
                                 .next-article
                                     p.next Следующая статья
                                     a(href="#").next-title Создаем чат-бот в Python с помощью nltk
-                        .col-lg-4
+                        .col-md-4
                             aside.aside-articles__block
                                 .aside-title__wrapper
                                     p.aside-title Читайте также
@@ -42,5 +42,5 @@ block main
                                     p.aside-title Тесты
                                 +asideArticleMain(allArticles[0].title,allArticles[0].srcset,allArticles[0].href,allArticles[0].src)
                                 +asideArticle(preFooterArticles)
-                    a(href="#up").up
+                    a(href="#up").up.d-none.d-md-block
                         +svg('chevron-down')

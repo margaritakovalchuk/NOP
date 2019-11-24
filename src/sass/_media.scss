@@ -1,4 +1,7 @@
 @media (min-width: 1200px) {
+  .header-main {
+    padding-bottom: 0;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -28,12 +31,17 @@
     background-color: $secondary-text-color;
   }
 
-  .page-title {
-    font-size: 40px;
+  .navigation-main {
+    margin-left: auto;
+  }
+
+  .header-wrapper {
+    box-shadow: 0 6px 8px 0 rgba(224, 224, 224, 0.8);
+    background-color: $container-bg-color;
   }
 
   .header-main {
-    padding: 20px 0;
+    box-shadow: none;
 
     .navigation-main__items li {
       font-size: 16px;
@@ -77,23 +85,38 @@
     justify-content: space-between;
     flex-wrap: wrap;
   }
+
   .pre-footer li:not(:last-child) {
     margin-bottom: 0;
     margin-right: 15px;
   }
+
+  .inner__subtitle {
+    width: 100%;
+  }
+
+  .article__card_aside .card-title {
+    font-size: 13px;
+  }
+
+  .article__card_inner .card-title {
+    font-size: 17px;
+  }
+
+  .article__title {
+    font-size: 29px;
+    line-height: 1.2;
+  }
+  .aside-articles__block p {
+    font-size: 17px;
+  }
 }
 
 @media (max-width: 767px) {
-  .header-main {
-    padding: 0;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-  }
-
   .header-main .navigation-main {
     margin-bottom: 10px;
   }
+
   .nav-toggle {
     display: block;
     padding: 0;
@@ -184,6 +207,23 @@
       margin: 0;
     }
   }
+
+  .inner__filter {
+    display: none;
+  }
+
+  .article__card_inner .card-title {
+    font-size: 22px;
+  }
+  .time__wrapper {
+    margin-bottom: 15px;
+  }
+
+  .card-img {
+    img, source {
+      margin-bottom: 10px;
+    }
+  }
 }
 
 @media (max-width: 575px) {
@@ -205,6 +245,7 @@
 
   .card-deck .card-article .card-title {
     font-size: 16px;
+    font-weight: bold;
   }
 
   .cards__wrapper {
@@ -214,12 +255,30 @@
   .button__wrapper {
     margin-bottom: 15px;
   }
+
+  .navigation-main__items li {
+    margin-bottom: 5px;
+  }
+
+  .inner__navigation {
+    margin-bottom: 10px;
+  }
+
+  .inner__subtitle {
+    font-size: 18px;
+  }
+
+  .main-inner {
+    padding: 25px 0;
+  }
 }
 
-//@media (max-width: 509px) {
-//
-//}
-//
+@media (max-width: 574px) {
+  .article__card_inner .card-title {
+    font-size: 16px;
+  }
+}
+
 //@media (max-width: 479px) {
 //
 //}

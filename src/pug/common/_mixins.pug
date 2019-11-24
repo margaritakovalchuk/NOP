@@ -9,9 +9,9 @@ mixin navBar(data, isSorted)
                 li: a(href=item.url)!= item.title
 
 mixin search
-    .col-lg-1.order-lg-0.col-2.d-flex.align-items-center.ml-md-auto.ml-0.order-3.order-md-2.order-xl-0
-        .position-relative.ml-auto
-            button.navigation__search.my-auto(type="button")
+    .col-2.col-lg-1.order-3.order-md-2.order-xl-0.ml-md-auto.my-auto
+        .position-relative
+            button.navigation__search(type="button")
                 +svg('search')
             .search-wrapper.d-none
                 .search-group
@@ -26,82 +26,69 @@ mixin cardImageOverlay(data)
             a(href!=item.href)
                 .card.card-trend
                     .card-img.trend__img(style=`background-image: url('${item.src}')`)
-                    .card-img-overlay.d-flex.align-items-center
+                    .card-img-overlay.d-flex.align-items-center.justify-content-center
                         p.card-title.text-center!= item.title
 
 mixin pageCaption(title, description)
-    section.inner-page_header
         .col-lg-12
-            p.inner__title!= `${title}`
-            .inner__navigation.d-flex.justify-content-between
-                nav.navigation-main
-                    +navBar(mainNavigation, false)
-                .inner__filter
-                    span.filter-current.d-inline-flex Последнее
-                        +svg('chevron-down')
-                    ul.filter-list-pulldown
-                        li: a(href="#") Последнее
-                        li: a(href="#") Обсуждаемые посты
-                        li: a(href="#") Самое популярное
-                        li: a(href="#") Популярное за 7 дней
-                        li: a(href="#") По оценкам в отзывах
-                        li: a(href="#") Случайно
-            p.inner__subtitle!=`${description}`
+            section.inner-page_header
+                p.inner__title!= `${title}`
+                .inner__navigation.d-flex.justify-content-between
+                    nav.navigation-main
+                        +navBar(mainNavigation, true)
+                    .inner__filter
+                        span.filter-current.d-inline-flex Последнее
+                            +svg('chevron-down')
+                        ul.filter-list-pulldown
+                            li: a(href="#") Последнее
+                            li: a(href="#") Обсуждаемые посты
+                            li: a(href="#") Самое популярное
+                            li: a(href="#") Популярное за 7 дней
+                            li: a(href="#") По оценкам в отзывах
+                            li: a(href="#") Случайно
+                p.inner__subtitle!=`${description}`
 
 mixin innnerArticle(data)
     each item in data
         article.article__card.article__card_inner
             .row
-                .col-md-4
+                .col-4.col-lg-4.col-md-5.pr-2
                     a(href!=`${item.href}`)
-                        picture.card-img
-                            source.img-fluid(type="image/webp" srcset!= `${item.srcset}`)
-                            source.img-fluid(type="image/jpeg" srcset!= `${item.src}`)
-                            img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
-                .col-md-8
+                        +picture(item)
+                .col-8.col-lg-8.col-md-7
                     .card-body
                         a(href!=`${item.href}`).card-title!= item.title
-                        p.card-text!= item.text
+                        p.card-text.d-none.d-md-block!= item.text
 
 mixin asideArticleMain(title, srcset, href, src)
     a(href!=`${href}`)
         article.card.card-article
             .card-img__wrapper
-                picture
-                    source.img-fluid(type="image/webp" srcset!= `${srcset}`)
-                    source.img-fluid(type="image/jpeg" srcset!= `${src}`)
-                    img.img-fluid(src!= `${src}` alt!= `${title}`)
+                +picture(item)
             .card-body
                 p.card-title!= title
 
 mixin card(data)
-    .d-flex
-        .card-deck.justify-content-center
-            each item in data
-                .col-lg-4.col-md-6
-                    article.card.card-article
-                        .card-img__wrapper
-                            a(href!=`${item.href}`)
-                                picture
-                                    source.img-fluid(type="image/webp" srcset!= `${item.srcset}`)
-                                    source.img-fluid(type="image/jpeg" srcset!= `${item.src}`)
-                                    img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
-                                span.badge.card-badge!=item.badge
-                        .card-body
-                            a(href!=`${item.href}`)
-                                p.card-title!= item.title
+    .card-deck.justify-content-center
+        each item in data
+            .col-lg-4.col-md-6
+                article.card.card-article
+                    .card-img__wrapper
+                        a(href!=`${item.href}`)
+                            +picture(item)
+                            span.badge.card-badge!=item.badge
+                    .card-body
+                        a(href!=`${item.href}`)
+                            p.card-title!= item.title
 
 mixin asideArticle(data)
     each item in data
         article.article__card.article__card_aside
             .row
-                .col-lg-4
+                .col-lg-4.col-md-5
                     a(href!=`${item.href}`)
-                        picture.card-img
-                            source.img-fluid(type="image/webp" srcset!= `${item.srcset}`)
-                            source.img-fluid(type="image/jpeg" srcset!= `${item.src}`)
-                            img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
-                .col-lg-8.pl-0
+                        +picture(item)
+                .col-lg-8.col-md-7.pl-md-0
                     a(href!=`${item.href}`).card-title!= item.title
                 .card-body
                     p.card-text!= item.text
@@ -135,8 +122,8 @@ mixin socials
         li: a(href="#" target="_blank")
             +svg('facebook-logo')
 
-//mixin picture
-//    picture
-//        source.img-fluid(type="image/webp" srcset!= `${item.srcset}`)
-//        source.img-fluid(type="image/jpeg" srcset!= `${item.src}`)
-//        img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)
+mixin picture(item)
+    picture
+        source.img-fluid(type="image/webp" srcset!= `${item.srcset}`)
+        source.img-fluid(type="image/jpeg" srcset!= `${item.src}`)
+        img.img-fluid(src!= `${item.src}` alt!= `${item.title}`)

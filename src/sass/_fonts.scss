@@ -5,7 +5,7 @@
 @include font-face('Roboto-Regular', '#{$font-path}/Roboto-Regular');
 @include font-face('Roboto-Bold', '#{$font-path}/Roboto-Bold');
 @include font-face('Calibri', '#{$font-path}/Calibri');
-//@include font-face('Merriweather-Italic', '#{$font-path}/Merriweather-Italic');
-//@include font-face('Merriweather-Regular', '#{$font-path}/Merriweather-Regular');
-//@include font-face('MGillSans', '#{$font-path}/MGillSans');
-//@include font-face('SpaceMono-Regular', '#{$font-path}/SpaceMono-Regular');
+@include font-face('Merriweather-Italic', '#{$font-path}/Merriweather-Italic');
+@include font-face('Merriweather-Regular', '#{$font-path}/Merriweather-Regular');
+@include font-face('MGillSans', '#{$font-path}/MGillSans');
+@include font-face('SpaceMono-Regular', '#{$font-path}/SpaceMono-Regular');

@@ -17,21 +17,8 @@ html(lang="en")
                 a(href="https://www.enable-javascript.com/" target="_blank")
                     | instructions how to enable JavaScript in your web browser
         .page
-            block headerInner
-                .header-wrapper
-                    .container
-                        header.header-main.header-main_inner-pages
-                            .d-flex
-                                .col-2.my-auto.order-lg-1.order-xl-0
-                                    a(href="index.html")
-                                        img.logo.img-fluid(src="img/logo.jpg" alt="Nuances of programming")
-                                .col-lg-9.d-flex.align-items-center.justify-content-center.order-xl-0.order-1
-                                    nav.navigation-main
-                                        button(type="button").nav-toggle.d-block.d-md-none
-                                            +svg('nav-toggle__open')
-                                        +navBar(mainNavigation, false)
-                                +search
+            a(id="up")
+            include ../partials/_header
             block main
             include ../partials/_footer
-            include ../partials/_menu-toggle
         include ../partials/_scripts

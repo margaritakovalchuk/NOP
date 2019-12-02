@@ -1,7 +1,5 @@
 @media (min-width: 1200px) {
-  .header-main {
-    padding-bottom: 0;
-  }
+
 }
 
 @media (max-width: 1199px) {
@@ -113,10 +111,6 @@
 }
 
 @media (max-width: 767px) {
-  .header-main .navigation-main {
-    margin-bottom: 10px;
-  }
-
   .nav-toggle {
     display: block;
     padding: 0;
@@ -167,7 +161,6 @@
     display: none;
   }
 
-  .nav-toggle__close,
   .nav-toggle__open {
     height: 25px;
     width: 25px;

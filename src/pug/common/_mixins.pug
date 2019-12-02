@@ -1,4 +1,3 @@
-// TODO move to mixin
 mixin navBar(data, isSorted)
     - data = isSorted ? data.sort(function (a, b) { return a.title < b.title ? -1 : 1; }) : data;
     ul.navigation-main__items

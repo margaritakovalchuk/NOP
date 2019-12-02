@@ -1,0 +1,11 @@
+.sidebar-menu
+    .container
+        .mobile-menu.d-md-none
+            .d-flex
+                .col-sm-10
+                    +socials
+                    +navBar(mainNavigation, false)
+                .col-sm-2
+                    button(type="button").menu-toggle__close
+                        +svg('nav-toggle__close')
+.overlay

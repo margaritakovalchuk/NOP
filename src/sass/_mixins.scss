@@ -25,6 +25,7 @@
 
 @mixin menu {
   display: flex;
+  flex-wrap: wrap;
 
   span {
     color: $text-color;

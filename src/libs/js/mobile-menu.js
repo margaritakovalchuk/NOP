@@ -1,4 +1,4 @@
-const MobileMenu = ({mainClass, pageClass, headerClass, menuClass, menuButtonClass, sidebarClass, mobileMenuClass, overlayClass}) => {
+const MobileMenu = ({mainClass, pageClass, headerClass, menuClass, menuButtonClass, sidebarClass, mobileMenuClass, cross, overlayClass}) => {
     const body = document.body,
         mainContent = document.querySelector(mainClass),
         page = document.querySelector(pageClass),
@@ -7,6 +7,7 @@ const MobileMenu = ({mainClass, pageClass, headerClass, menuClass, menuButtonCla
         menuButton = document.querySelector(menuButtonClass),
         sidebar = document.querySelector(sidebarClass),
         mobileMenu = document.querySelector(mobileMenuClass),
+        closeButton = document.querySelector(cross),
         overlay = document.querySelector(overlayClass);
 
     const showMenu = () => {
@@ -29,4 +30,5 @@ const MobileMenu = ({mainClass, pageClass, headerClass, menuClass, menuButtonCla
 
     menuButton.addEventListener('click', showMenu, false);
     overlay.addEventListener('click', hideMenu, false);
+    closeButton.addEventListener('click', hideMenu, false);
 };

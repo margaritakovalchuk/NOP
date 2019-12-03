@@ -1,4 +1,4 @@
-const filterArticles = ({wrapper, current, list}) => {
+const FilterArticles = ({wrapper, current, list}) => {
     const body = document.body,
         filterWrapper = document.querySelector(wrapper),
         currentValue = document.querySelector(current),

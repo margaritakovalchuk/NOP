@@ -1,0 +1,14 @@
+.sidebar-menu.search-sidebar
+    .container
+        .search-sidebar__wrapper.d-md-none
+            .row
+                .col-2.text-right.ml-auto
+                    button(type="button").menu-toggle__close
+                        +svg('nav-toggle__close')
+                .col-12
+                    form.d-block
+                        .form-group
+                            label.search-label.d-block.text-center(for="inputtext") Поиск
+                            input(type="text").search-input.form-control.text-center#inputtext
+
+.overlay
